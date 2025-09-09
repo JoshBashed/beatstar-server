@@ -1,0 +1,45 @@
+{
+    "author": "",
+    "dependencies": {
+        "zod": "^4.1.5"
+    },
+    "description": "API server.",
+    "devDependencies": {
+        "@biomejs/biome": "^2.2.3",
+        "@rollup/plugin-alias": "^5.1.1",
+        "@rollup/plugin-commonjs": "^28.0.6",
+        "@rollup/plugin-swc": "^0.4.0",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@swc/core": "^1.13.5",
+        "@types/nodemailer": "^6.4.19",
+        "@types/pg": "^8.15.5",
+        "concurrently": "^9.2.1",
+        "rollup": "^4.50.1",
+        "rollup-plugin-copy": "^3.5.0",
+        "typescript": "^5.9.2"
+    },
+    "keywords": [],
+    "license": "proprietary",
+    "main": "dist/index.cjs",
+    "name": "beatstar-server",
+    "packageManager": "pnpm@10.6.5",
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@biomejs/biome",
+            "@swc/core",
+            "argon2",
+            "esbuild"
+        ]
+    },
+    "scripts": {
+        "build": "rollup -c --environment NODE_ENV:production",
+        "build:dev": "rollup -c --environment NODE_ENV:development",
+        "check": "biome check --write",
+        "dev": "NODE_ENV=development concurrently \"pnpm run watch --environment NODE_ENV:development\" \"node --env-file .env --watch ./dist/index.cjs\"",
+        "start": "node .",
+        "typecheck": "tsc --noEmit",
+        "watch": "rollup -c --watch"
+    },
+    "type": "module",
+    "version": "1.0.0"
+}
