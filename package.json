@@ -16,7 +16,7 @@
         "concurrently": "^9.2.1",
         "rollup": "^4.50.1",
         "rollup-plugin-copy": "^3.5.0",
-        "typescript": "^5.9.2"
+        "typescript": "^5.9.3"
     },
     "keywords": [],
     "license": "proprietary",
